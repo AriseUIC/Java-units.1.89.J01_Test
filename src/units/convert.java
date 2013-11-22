@@ -248,7 +248,7 @@ public class convert
       if (cmd.nErrors()>0)
       {
         Env.out.println(USAGE);
-        //System.exit(1);
+        System.exit(1);//<-
       }
 
       //---------------------------------------------------------------
@@ -257,8 +257,8 @@ public class convert
       //  Otherwise save information specified by options.
       //  This may replace all option values in Env.
       //---------------------------------------------------------------
-     // boolean done = processopts(cmd);
-     // if (done) System.exit(0);
+     boolean done = processopts(cmd);
+     if (done) System.exit(0);
 
       //---------------------------------------------------------------
       //  Set encoding for System io
@@ -292,7 +292,7 @@ public class convert
       if (cmd.opt('V'))
       {
         Env.showAbout();
-        //System.exit(0);
+        System.exit(0);
       }
 
       //---------------------------------------------------------------
@@ -301,7 +301,7 @@ public class convert
       if (Env.unitcheck)
       {
         Tables.check();
-       // System.exit(0);
+        System.exit(0);
       }
 
       //---------------------------------------------------------------
@@ -352,7 +352,7 @@ public class convert
       //---------------------------------------------------------------
       Value have = Value.fromString(havestr);
       if (have==null)
-       // System.exit(1);
+        System.exit(1);
 
       //---------------------------------------------------------------
       //  If 'to-unit' was not specified:
@@ -368,7 +368,7 @@ public class convert
         {
           Env.out.print(Env.verbose>0? "\tDefinition: " : "\t");
           Env.out.println(haveDef);
-         // System.exit(0);
+          System.exit(0);
         }
 
         //-------------------------------------------------------------
