@@ -216,7 +216,7 @@ public class FunctionTest {
 			fail("Unexpected"+ex.getStackTrace());
 				}
 			}
-	
+
 
 	@Test
 	public void cosine_test() {
@@ -270,6 +270,22 @@ public class FunctionTest {
 		}
 	
 	@Test
+	public void cube_root_test() {
+		try {
+			
+			System.setOut(new PrintStream(systemOut));
+			String[] argv={"-c","-v","-1","cuberoot(27)",""};	//radians
+			convert.main(argv);
+			String result=systemOut.toString();
+			Assert.assertEquals("3\n",result);
+			systemOut.close();
+		}
+		catch (Exception ex) {
+			
+			fail("Unexpected"+ex.getStackTrace());
+				}
+		}
+	@Test
 	public void rounding_off_test() {
 		try {
 			
@@ -285,6 +301,8 @@ public class FunctionTest {
 			fail("Unexpected"+ex.getStackTrace());
 				}
 		}
+	
+	
+	
 	}
-
 

@@ -24,7 +24,7 @@ public class convertTest {
 	try {
 		
 		System.setOut(new PrintStream(systemOut));
-		
+						//You have, You want
 		String[] argv={"5 yards * (4 feet + 3 in) * 7 in * 1 kg/liter","pounds"};
 		convert.main(argv);
 		String result=systemOut.toString();
@@ -345,15 +345,16 @@ public void baking_test() {
 			}
 		}
 
+
 @Test
-public void comformability_error_test() {
+public void micromol_test() {
 	try {
 		
 		System.setOut(new PrintStream(systemOut));
-		String[] argv={"-c","-v","-1","10 gallons","circlearea(5cm)"};
+		String[] argv={"-c","-v","-1","0.17 gallons","ph"};
 		convert.main(argv);
 		String result=systemOut.toString();
-		Assert.assertEquals("Conformability error\n0.037854118 m^3\n0.0078539816 m^2\n",result);
+		Assert.assertEquals("Conformability error\n0.00064352 m^3\n10000 cd sr / m^2\n",result);
 		systemOut.close();
 	}
 	catch (Exception ex) {
@@ -361,4 +362,22 @@ public void comformability_error_test() {
 		fail("Unexpected"+ex.getStackTrace());
 			}
 		}
+
+@Test
+public void shortform_test() {
+	try {
+		
+		System.setOut(new PrintStream(systemOut));
+		String[] argv={"-c","-v","-1","1gram","m-gram"};
+		convert.main(argv);
+		String result=systemOut.toString();
+		Assert.assertEquals("Sum of non-conformable values:\n\tm\n\t-0.001 kg.\n",result);
+		systemOut.close();
+	}
+	catch (Exception ex) {
+		
+		fail("Unexpected"+ex.getStackTrace());
+			}
+		}
+
 }
