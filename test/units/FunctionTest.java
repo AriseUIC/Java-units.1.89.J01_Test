@@ -301,8 +301,120 @@ public class FunctionTest {
 			fail("Unexpected"+ex.getStackTrace());
 				}
 		}
+	@Test
+	public void metrics_ton_test() {
+		try {
+			
+			System.setOut(new PrintStream(systemOut));
+			String[] argv={"-c","-v","-1","ton","uston"};
+			convert.main(argv);
+			String result=systemOut.toString();
+			Assert.assertEquals("1\n",result);
+			systemOut.close();
+		}
+		catch (Exception ex) {
+			
+			fail("Unexpected"+ex.getStackTrace());
+				}
+			}
 	
-	
-	
+	@Test
+	public void zincgauge_function_test() {
+		try {
+			
+			System.setOut(new PrintStream(systemOut));
+			String[] argv={"-c","-v","-1","zincgauge(1)","in"};
+			convert.main(argv);
+			String result=systemOut.toString();
+			Assert.assertEquals("0.002\n",result);
+			systemOut.close();
+		}
+		catch (Exception ex) {
+			
+			fail("Unexpected"+ex.getStackTrace());
+				}
 	}
-
+	
+	@Test
+	public void piecewise_function_test() {
+		try {
+			
+			System.setOut(new PrintStream(systemOut));
+			String[] argv={"-c","-v","-1","2 years","hours min s"};
+			convert.main(argv);
+			String result=systemOut.toString();
+			Assert.assertEquals("Conformability error\n63113852 s\n216000 s^3\n",result);
+			systemOut.close();
+		}
+		catch (Exception ex) {
+			
+			fail("Unexpected"+ex.getStackTrace());
+				}
+	}
+	
+	@Test
+	public void exponent_test_2() {
+		try {
+			System.setOut(new PrintStream(systemOut));
+			String[] argv={"-c","-v","-1","(400 W/m^2 / stefanboltzmann)^0.25", "K"};
+			convert.main(argv);
+			String result=systemOut.toString();
+			Assert.assertEquals("289.80881\n",result);
+			systemOut.close();
+		}
+		catch (Exception ex) {
+			
+			fail("Unexpected"+ex.getStackTrace());
+				}
+			}
+	
+	@Test
+	public void exponent_test_3() {
+		try {
+			System.setOut(new PrintStream(systemOut));
+			String[] argv={"-c","-v","-1","acre^(1/2)", "feets"};
+			convert.main(argv);
+			String result=systemOut.toString();
+			Assert.assertEquals("208.71074\n",result);
+			systemOut.close();
+		}
+		catch (Exception ex) {
+			
+			fail("Unexpected"+ex.getStackTrace());
+				}
+			}
+	
+	@Test
+	public void exponent_test_4() {
+		try {
+			System.setOut(new PrintStream(systemOut));
+			String[] argv={"-c","-v","-1","100 ft**3", "liters"};
+			convert.main(argv);
+			String result=systemOut.toString();
+			Assert.assertEquals("2831.6847\n",result);
+			systemOut.close();
+		}
+		catch (Exception ex) {
+			
+			fail("Unexpected"+ex.getStackTrace());
+				}
+			}
+	
+	@Test
+	public void exponent_test_5() {
+		try {
+			System.setOut(new PrintStream(systemOut));
+			String[] argv={"-c","-v","-1","2^3^2", ""};
+			convert.main(argv);
+			String result=systemOut.toString();
+			Assert.assertEquals("512\n",result);
+			systemOut.close();
+		}
+		catch (Exception ex) {
+			
+			fail("Unexpected"+ex.getStackTrace());
+				}
+			}
+	
+		
+	}

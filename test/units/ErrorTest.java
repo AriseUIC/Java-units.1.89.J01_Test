@@ -129,24 +129,37 @@ public class ErrorTest {
 				}
 			}
 	
-
-@Test
-public void divide_by_zero_error_test() {
-	try {
-		
-		System.setOut(new PrintStream(systemOut));
-		String[] argv={"4/0","1"};
-		convert.main(argv);
-		String result=systemOut.toString();
-		Assert.assertEquals("3.1207548e16\n",result);
-		systemOut.close();
-	}
-	catch (Exception ex) {
-		
-		fail("Unexpected"+ex.getStackTrace());
-			}
+	@Test
+	public void conformability_error_usd_test() {
+		try {
+			System.setOut(new PrintStream(systemOut));
+			String[] argv={"-c","-v","-1","$2", "$"};
+			convert.main(argv);
+			String result=systemOut.toString();
+			Assert.assertEquals("Conformability error\nUS$^2\nUS$\n",result);
+			systemOut.close();
 		}
+		catch (Exception ex) {
+			
+			fail("Unexpected"+ex.getStackTrace());
+				}
+			}
+	
+	@Test
+	public void def_unknown_error_test () {
+		try {
+			
+			System.setOut(new PrintStream(systemOut));
+			String[] argv={"jansky","?"};
+			convert.main(argv);
+			String result=systemOut.toString();
+			Assert.assertEquals("Unit '?' is unknown.\n",result);
+			systemOut.close();
+		}
+		catch (Exception ex) {
+			
+			fail("Unexpected"+ex.getStackTrace());
+				}
+			}
 
-
-
-}
+	}

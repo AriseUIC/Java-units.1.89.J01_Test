@@ -380,4 +380,157 @@ public void shortform_test() {
 			}
 		}
 
+@Test
+public void plural_remove_test() {
+	try {
+		
+		System.setOut(new PrintStream(systemOut));
+		String[] argv={"-c","-v","-1","12 inches","centi meters"};
+		convert.main(argv);
+		String result=systemOut.toString();
+		Assert.assertEquals("30.48\n",result);
+		systemOut.close();
+	}
+	catch (Exception ex) {
+		
+		fail("Unexpected"+ex.getStackTrace());
+			}
+		}
+
+@Test
+public void no_verbose_test () {
+	try {
+		
+		System.setOut(new PrintStream(systemOut));
+		String[] argv={"-c","-v","-1","12 inches","centi meters"};
+		convert.main(argv);
+		String result=systemOut.toString();
+		Assert.assertEquals("30.48\n",result);
+		systemOut.close();
+	}
+	catch (Exception ex) {
+		
+		fail("Unexpected"+ex.getStackTrace());
+			}
+		}
+
+@Test
+public void rounding_off_test () {
+	try {
+		
+		System.setOut(new PrintStream(systemOut));
+		String[] argv={"-c","-v","-1","2 m","ft;in;1|8 in;;"};
+		convert.main(argv);
+		String result=systemOut.toString();
+		Assert.assertEquals("6;6;6;-\n",result);
+		systemOut.close();
+	}
+	catch (Exception ex) {
+		
+		fail("Unexpected"+ex.getStackTrace());
+			}
+		}
+
+@Test
+public void radiation_unit_conversion_test () {
+	try {
+		
+		System.setOut(new PrintStream(systemOut));
+		String[] argv={"-c","-v","-1","microcurie","rutherford"};
+		convert.main(argv);
+		String result=systemOut.toString();
+		Assert.assertEquals("0.037\n",result);
+		systemOut.close();
+	}
+	catch (Exception ex) {
+		
+		fail("Unexpected"+ex.getStackTrace());
+			}
+		}
+
+@Test
+public void radiation_unit_conversion_2_test () {
+	try {
+		
+		System.setOut(new PrintStream(systemOut));
+		String[] argv={"-c","-v","-1","microsievert","gray"};
+		convert.main(argv);
+		String result=systemOut.toString();
+		Assert.assertEquals("1e-6\n",result);
+		systemOut.close();
+	}
+	catch (Exception ex) {
+		
+		fail("Unexpected"+ex.getStackTrace());
+			}
+		}
+
+@Test
+public void computing_units_conversion_test_1 () {
+	try {
+		
+		System.setOut(new PrintStream(systemOut));
+		String[] argv={"-c","-v","-1","byte","bit"};
+		convert.main(argv);
+		String result=systemOut.toString();
+		Assert.assertEquals("8\n",result);
+		systemOut.close();
+	}
+	catch (Exception ex) {
+		
+		fail("Unexpected"+ex.getStackTrace());
+			}
+		}
+
+@Test
+public void computing_units_conversion_test_2 () {
+	try {
+		
+		System.setOut(new PrintStream(systemOut));
+		String[] argv={"-c","-v","-1","kilobyte","byte"};
+		convert.main(argv);
+		String result=systemOut.toString();
+		Assert.assertEquals("1000\n",result);
+		systemOut.close();
+	}
+	catch (Exception ex) {
+		
+		fail("Unexpected"+ex.getStackTrace());
+			}
+		}
+
+@Test
+public void computing_units_conversion_test_3 () {
+	try {
+		
+		System.setOut(new PrintStream(systemOut));
+		String[] argv={"-c","-v","-1","megabyte","kilobyte"};
+		convert.main(argv);
+		String result=systemOut.toString();
+		Assert.assertEquals("1000\n",result);
+		systemOut.close();
+	}
+	catch (Exception ex) {
+		
+		fail("Unexpected"+ex.getStackTrace());
+			}
+	}
+
+@Test
+public void computing_units_conversion_test_4 () {
+	try {
+		
+		System.setOut(new PrintStream(systemOut));
+		String[] argv={"-c","-v","-1","gigabyte","megabyte"};
+		convert.main(argv);
+		String result=systemOut.toString();
+		Assert.assertEquals("1000\n",result);
+		systemOut.close();
+	}
+	catch (Exception ex) {
+		
+		fail("Unexpected"+ex.getStackTrace());
+			}
+	}
+
 }
