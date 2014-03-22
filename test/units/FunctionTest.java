@@ -353,7 +353,7 @@ public class FunctionTest {
 	}
 	
 	@Test
-	public void exponent_test_2() {
+	public void exponent_2_test() {
 		try {
 			System.setOut(new PrintStream(systemOut));
 			String[] argv={"-c","-v","-1","(400 W/m^2 / stefanboltzmann)^0.25", "K"};
@@ -369,7 +369,7 @@ public class FunctionTest {
 			}
 	
 	@Test
-	public void exponent_test_3() {
+	public void exponent_3_test() {
 		try {
 			System.setOut(new PrintStream(systemOut));
 			String[] argv={"-c","-v","-1","acre^(1/2)", "feets"};
@@ -385,7 +385,7 @@ public class FunctionTest {
 			}
 	
 	@Test
-	public void exponent_test_4() {
+	public void exponent_4_test() {
 		try {
 			System.setOut(new PrintStream(systemOut));
 			String[] argv={"-c","-v","-1","100 ft**3", "liters"};
@@ -401,7 +401,7 @@ public class FunctionTest {
 			}
 	
 	@Test
-	public void exponent_test_5() {
+	public void exponent_5_test() {
 		try {
 			System.setOut(new PrintStream(systemOut));
 			String[] argv={"-c","-v","-1","2^3^2", ""};
@@ -415,6 +415,4 @@ public class FunctionTest {
 			fail("Unexpected"+ex.getStackTrace());
 				}
 			}
-	
-		
 	}

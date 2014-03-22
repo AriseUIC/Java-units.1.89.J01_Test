@@ -20,7 +20,7 @@ public class convertTest {
 	ByteArrayOutputStream systemOut = new ByteArrayOutputStream();
 	
 	@Test
-	public void test() {
+	public void conversion_test1() {
 	try {
 		
 		System.setOut(new PrintStream(systemOut));
@@ -39,7 +39,7 @@ public class convertTest {
 	
 
 @Test
-public void test2() {
+public void conversion_test2() {
 try {
 	
 	System.setOut(new PrintStream(systemOut));
@@ -56,7 +56,7 @@ catch (Exception ex) {
 	}
 
 @Test
-public void test3() {
+public void conversion_test3() {
 try {
 	
 	System.setOut(new PrintStream(systemOut));
@@ -73,7 +73,7 @@ catch (Exception ex) {
 	}
 
 @Test
-public void test4() {
+public void conversion_test4() {
 try {
 	
 	System.setOut(new PrintStream(systemOut));
@@ -90,7 +90,7 @@ catch (Exception ex) {
 	}
 
 @Test
-public void test5() {
+public void conversion_test5() {
 try {
 	
 	System.setOut(new PrintStream(systemOut));
@@ -107,7 +107,7 @@ catch (Exception ex) {
 	}
 
 @Test
-public void test_optionVerbose() {
+public void optionVerbose_test() {
 try {
 	
 	System.setOut(new PrintStream(systemOut));
@@ -124,7 +124,7 @@ catch (Exception ex) {
 	}
 
 @Test
-public void test_printReciprocal() {
+public void printReciprocal_test() {
 try {
 	
 	System.setOut(new PrintStream(systemOut));
@@ -141,7 +141,7 @@ catch (Exception ex) {
 	}
 
 @Test
-public void test_printReciprocalConversion() {
+public void printReciprocalConversion_test() {
 try {
 	
 	System.setOut(new PrintStream(systemOut));
@@ -158,7 +158,7 @@ catch (Exception ex) {
 	}
 
 @Test
-public void test_optionCompact() {
+public void optionCompact_test() {
 try {
 	
 	System.setOut(new PrintStream(systemOut));
@@ -175,7 +175,7 @@ catch (Exception ex) {
 	}
 
 @Test
-public void test_mixedUnits() {
+public void mixedUnits_test() {
 try {
 	
 	System.setOut(new PrintStream(systemOut));
@@ -192,7 +192,7 @@ catch (Exception ex) {
 	}
 
 @Test
-public void test_optionVerbose_and_oneline() {
+public void optionVerbose_and_oneline_test() {
 try {
 	
 	System.setOut(new PrintStream(systemOut));
@@ -261,7 +261,7 @@ public void add_sub_test() {
 		}
 
 @Test
-public void shorthand_test_1() {
+public void shorthand_test1() {
 	try {
 		
 		System.setOut(new PrintStream(systemOut));
@@ -278,7 +278,7 @@ public void shorthand_test_1() {
 		}
 
 @Test
-public void shorthand_test_2() {
+public void shorthand_test2() {
 	try {
 		
 		System.setOut(new PrintStream(systemOut));
@@ -466,7 +466,7 @@ public void radiation_unit_conversion_2_test () {
 		}
 
 @Test
-public void computing_units_conversion_test_1 () {
+public void computing_units_conversion_1_test () {
 	try {
 		
 		System.setOut(new PrintStream(systemOut));
@@ -483,7 +483,7 @@ public void computing_units_conversion_test_1 () {
 		}
 
 @Test
-public void computing_units_conversion_test_2 () {
+public void computing_units_conversion_3_test () {
 	try {
 		
 		System.setOut(new PrintStream(systemOut));
@@ -500,7 +500,7 @@ public void computing_units_conversion_test_2 () {
 		}
 
 @Test
-public void computing_units_conversion_test_3 () {
+public void computing_units_conversion_2_test () {
 	try {
 		
 		System.setOut(new PrintStream(systemOut));
@@ -517,7 +517,7 @@ public void computing_units_conversion_test_3 () {
 	}
 
 @Test
-public void computing_units_conversion_test_4 () {
+public void computing_units_conversion_4_test () {
 	try {
 		
 		System.setOut(new PrintStream(systemOut));
